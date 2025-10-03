@@ -1,0 +1,22 @@
+name: dredge_ui
+description: Reusable UI widgets for the Dredge project
+version: 0.0.1
+homepage: https://github.com/dredge-io/dredge-ui
+
+environment:
+  sdk: ^3.8.1
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_inappwebview: ^6.1.5
+  provider: ^6.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
