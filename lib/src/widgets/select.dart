@@ -3,7 +3,6 @@ import 'package:dredge_ui/src/models/select_option.dart';
 import 'package:dredge_ui/src/providers/dialog_provider.dart';
 import 'package:dredge_ui/src/widgets/input_hint.dart';
 import 'package:dredge_ui/src/widgets/tappable.dart';
-import 'package:dredge_ui/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

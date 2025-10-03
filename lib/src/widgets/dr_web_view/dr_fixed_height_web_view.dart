@@ -1,6 +1,6 @@
 import 'package:dredge_ui/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart' hide WebView;
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class DrFixedHeightWebView extends StatefulWidget {
   final String? initialUrl;
