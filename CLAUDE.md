@@ -77,3 +77,4 @@ The package is organized into five main export modules, each with its own barrel
 - No tests are currently present in the package
 - Minimum Flutter version: 1.17.0
 - SDK version: ^3.8.1
+- On adding new widgets update README.md and CHANGELOG.md respectively

@@ -1,5 +1,5 @@
 import 'package:dredge_ui/src/providers/modal_provider.dart';
-import 'package:dredge_ui/src/widgets/modal/modal_container.dart';
+import 'package:dredge_ui/src/widgets/dr_modal/modal_container.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

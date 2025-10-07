@@ -1,6 +1,6 @@
 import 'package:dredge_ui/providers.dart';
 import 'package:dredge_ui/src/widgets/button.dart';
-import 'package:dredge_ui/src/widgets/dr_modal_header.dart';
+import 'package:dredge_ui/src/widgets/dr_modal/dr_modal_header.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

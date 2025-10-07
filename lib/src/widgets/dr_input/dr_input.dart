@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class Input extends StatefulWidget {
+class DrInput extends StatefulWidget {
   final TextEditingController? controller;
   final String? value;
   final ValueChanged<String>? onChange;
@@ -19,7 +19,7 @@ class Input extends StatefulWidget {
   final TextStyle? textStyle;
   final InputDecoration? decoration;
 
-  const Input({
+  const DrInput({
     super.key,
     this.controller,
     this.value,
@@ -43,10 +43,10 @@ class Input extends StatefulWidget {
        );
 
   @override
-  State<Input> createState() => _InputState();
+  State<DrInput> createState() => _DrInputState();
 }
 
-class _InputState extends State<Input> with SingleTickerProviderStateMixin {
+class _DrInputState extends State<DrInput> with SingleTickerProviderStateMixin {
   late TextEditingController _controller;
   late FocusNode _focusNode;
   late AnimationController _animationController;
@@ -94,7 +94,7 @@ class _InputState extends State<Input> with SingleTickerProviderStateMixin {
   }
 
   @override
-  void didUpdateWidget(Input oldWidget) {
+  void didUpdateWidget(DrInput oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.controller != oldWidget.controller) {
       _controller =
@@ -140,32 +140,47 @@ class _InputState extends State<Input> with SingleTickerProviderStateMixin {
           ),
         ),
         Positioned.fill(
-          child: TextField(
-            controller: _controller,
-            focusNode: _focusNode,
-            onChanged: widget.onChange,
-            enabled: widget.enabled,
-            keyboardType: widget.keyboardType,
-            obscureText: widget.obscureText,
-            maxLines: widget.maxLines,
-            maxLength: widget.maxLength,
-            inputFormatters: widget.inputFormatters,
-            style: widget.textStyle,
-            cursorColor: widget.cursorColor,
-            decoration:
-                widget.decoration?.copyWith(
-                  border: widget.decoration?.border ?? InputBorder.none,
-                  contentPadding:
-                      widget.decoration?.contentPadding ??
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-                ) ??
-                const InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 16,
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  controller: _controller,
+                  focusNode: _focusNode,
+                  onChanged: widget.onChange,
+                  enabled: widget.enabled,
+                  keyboardType: widget.keyboardType,
+                  obscureText: widget.obscureText,
+                  maxLines: widget.maxLines,
+                  maxLength: widget.maxLength,
+                  inputFormatters: widget.inputFormatters,
+                  style: widget.textStyle,
+                  cursorColor: widget.cursorColor,
+                  decoration:
+                      widget.decoration?.copyWith(
+                        border: widget.decoration?.border ?? InputBorder.none,
+                        contentPadding:
+                            widget.decoration?.contentPadding ??
+                            const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+                      ) ??
+                      const InputDecoration(
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 16,
+                        ),
+                      ),
+                ),
+              ),
+              if (!widget.enabled)
+                Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: Icon(
+                    Icons.lock,
+                    size: 20,
+                    color: Colors.grey,
                   ),
                 ),
+            ],
           ),
         ),
         if (widget.label != null)

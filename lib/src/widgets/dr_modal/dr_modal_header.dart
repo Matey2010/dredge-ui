@@ -1,3 +1,4 @@
+import 'package:dredge_ui/extensions.dart';
 import 'package:dredge_ui/src/widgets/tappable.dart';
 import 'package:flutter/material.dart';
 
@@ -26,20 +27,7 @@ class DrModalHeader extends StatelessWidget {
     return Container(
       height: height,
       padding: padding,
-      decoration:
-          BoxDecoration(
-            color: Colors.white,
-            border: Border(
-              bottom: BorderSide(color: Colors.grey.shade300, width: 1),
-            ),
-          ).copyWith(
-            color: decoration?.color,
-            image: decoration?.image,
-            gradient: decoration?.gradient,
-            boxShadow: decoration?.boxShadow,
-            borderRadius: decoration?.borderRadius,
-            shape: decoration?.shape,
-          ),
+      decoration: BoxDecoration(color: Colors.white).merge(decoration),
       child: Row(
         children: [
           if (onGoBack != null)

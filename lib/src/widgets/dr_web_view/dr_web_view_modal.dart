@@ -1,4 +1,4 @@
-import 'package:dredge_ui/src/widgets/dr_modal_header.dart';
+import 'package:dredge_ui/src/widgets/dr_modal/dr_modal_header.dart';
 import 'package:dredge_ui/src/widgets/dr_web_view/dr_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';

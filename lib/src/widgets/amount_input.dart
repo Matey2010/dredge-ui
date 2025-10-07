@@ -1,6 +1,6 @@
+import 'package:dredge_ui/src/widgets/dr_input/dr_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'input.dart';
 
 class AmountInput extends StatefulWidget {
   final TextEditingController? controller;
@@ -106,7 +106,7 @@ class _AmountInputState extends State<AmountInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Input(
+    return DrInput(
       controller: inputController,
       label: widget.label,
       enabled: widget.enabled,

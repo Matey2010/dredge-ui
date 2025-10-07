@@ -4,3 +4,4 @@ library dredge_ui;
 export 'src/models/select_option.dart';
 export 'src/models/notification.dart';
 export 'src/models/notification_type.dart';
+export 'src/models/country_data.dart';
