@@ -30,9 +30,11 @@ When I ask you to /increment-minor-version CLAUDE.md should:
 
 1. Perform flutter pub get to update pubspec.lock
 2. Update minor version in pubspec.yaml
-3. Analize changes that occured after previous commit that updated version
+3. Analize changes that occured after previous commit that updated version (Usually version commit name's have format `Version x.y.z` so you can use them as flag)
 4. Update README.md with the new component documentation
 5. Update CHANGELOG.md with the additions
+6. Run flutter analize to check if package is available for update
+7. Write about problems or places that require attention that happened at the time of update
 
 **TODO**: Add more custom workflow commands as needed
 

@@ -1,6 +1,6 @@
 name: dredge_ui
 description: Reusable UI widgets for the Dredge project
-version: 0.0.2
+version: 0.1.0
 homepage: https://github.com/dredge-io/dredge-ui
 
 environment:

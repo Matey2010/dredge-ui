@@ -16,7 +16,7 @@ Add this package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  dredge_ui: ^0.0.1
+  dredge_ui: ^0.1.0
 ```
 
 Or for local development:
@@ -64,14 +64,28 @@ void main() {
 ```dart
 import 'package:dredge_ui/widgets.dart';
 
-Input(
+DrInput(
   label: 'Email',
   keyboardType: TextInputType.emailAddress,
   onChange: (value) => print(value),
 )
 ```
 
-The `Input` widget features an animated floating label that transitions when focused or filled.
+The `DrInput` widget features an animated floating label that transitions when focused or filled.
+
+#### Phone Input with Country Selector
+
+```dart
+import 'package:dredge_ui/widgets.dart';
+
+DrPhoneInput(
+  label: 'Phone Number',
+  onChange: (fullPhone) => print(fullPhone), // Includes country code
+  availableCountryCodes: ['US', 'CA', 'GB'], // Optional: restrict countries
+)
+```
+
+The `DrPhoneInput` widget provides an international phone number input with a country selector dropdown. It automatically formats the phone number with the selected country's dial code.
 
 #### Button
 
@@ -230,7 +244,8 @@ import 'package:dredge_ui/extensions.dart';  // Dart extensions
 
 ### Widgets
 
-- **Input** - Text field with animated floating label
+- **DrInput** - Text field with animated floating label
+- **DrPhoneInput** - International phone number input with country selector
 - **DredgeButton** - Customizable button with icon support
 - **Select** - Dropdown selector with `SelectOption` model
 - **AmountInput** - Numeric input with formatting
@@ -239,7 +254,9 @@ import 'package:dredge_ui/extensions.dart';  // Dart extensions
 - **ModalLayout** - Modal container with backdrop
 - **ToastLayout** - Toast notification overlay
 - **TabNavigation** - Tab bar navigation
-- **DrWebView** - WebView components
+- **DrWebView**, **DrWebViewModal**, **DrFixedHeightWebView** - WebView components
+- **DrDefaultModal** - Default modal with header support
+- **DrModalHeader** - Reusable modal header with close and back buttons
 - **Tappable** - Touchable wrapper with ripple effect
 
 ### Models
@@ -247,6 +264,7 @@ import 'package:dredge_ui/extensions.dart';  // Dart extensions
 - **SelectOption** - Dropdown option data
 - **DredgeNotification** - Notification data with type and content
 - **NotificationType** - Enum for notification variants (success, error, warning, info)
+- **CountryPhoneData** - Country data with name, code, dial code, and flag emoji
 
 ## Development
 
