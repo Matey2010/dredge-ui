@@ -20,6 +20,22 @@ dart pub publish --dry-run      # Validate package before publishing
 dart pub publish                # Publish to pub.dev
 ```
 
+### Custom Commands
+
+When working with this project, Claude should follow these automated workflows:
+
+#### `/increment-minor-version` - Increment version
+
+When I ask you to /increment-minor-version CLAUDE.md should:
+
+1. Perform flutter pub get to update pubspec.lock
+2. Update minor version in pubspec.yaml
+3. Analize changes that occured after previous commit that updated version
+4. Update README.md with the new component documentation
+5. Update CHANGELOG.md with the additions
+
+**TODO**: Add more custom workflow commands as needed
+
 ## Architecture
 
 ### Module Organization
