@@ -20,23 +20,37 @@ dart pub publish --dry-run      # Validate package before publishing
 dart pub publish                # Publish to pub.dev
 ```
 
-### Custom Commands
+### Custom Workflows
 
-When working with this project, Claude should follow these automated workflows:
+When working with this project, Claude should handle listed automated workflows.
+Each workflow has Name section (prefixed with `####`), optional Description section (prefixed with `#####`), optional Parameters section (prefixed with `#####`) and Steps section (prefixed with `#####`). If workflow's format is invalid it should'nt be run either and user should be responded with issue with current workflow
 
-#### `/increment-minor-version` - Increment version
+- Name is unique workflow identifier and should be descriptive
+- Description is a paragraph gives general understanding of what this workflow does
+- Parameters is a list with workflow parameters. It will have short description after dash. If parameter is not valid by it's description (missing parameter that described as required for example) claude should not run workflow but instead ask user to pass valid params.
+- Steps are ordered actions that should be performed to complete workflow
 
-When I ask you to /increment-minor-version CLAUDE.md should:
+#### `update-version` - Increment version
+
+##### Description
+
+Increment version
+
+##### Parameters
+
+- `type` - one of major|minor|patch
+
+##### Steps
 
 1. Perform flutter pub get to update pubspec.lock
-2. Update minor version in pubspec.yaml
+2. Update version in pubspec.yaml depending on parameter (first number if type=major, second if type=minor and third if type=patch)
 3. Analize changes that occured after previous commit that updated version (Usually version commit name's have format `Version x.y.z` so you can use them as flag)
 4. Update README.md with the new component documentation
 5. Update CHANGELOG.md with the additions
 6. Run flutter analize to check if package is available for update
 7. Write about problems or places that require attention that happened at the time of update
 
-**TODO**: Add more custom workflow commands as needed
+**TODO**: Add more custom workflows as needed
 
 ## Architecture
 
