@@ -42,13 +42,14 @@ Increment version
 
 ##### Steps
 
-1. Perform flutter pub get to update pubspec.lock
-2. Update version in pubspec.yaml depending on parameter (first number if type=major, second if type=minor and third if type=patch)
-3. Analize changes that occured after previous commit that updated version (Usually version commit name's have format `Version x.y.z` so you can use them as flag)
-4. Update README.md with the new component documentation
-5. Update CHANGELOG.md with the additions
-6. Run flutter analize to check if package is available for update
-7. Write about problems or places that require attention that happened at the time of update
+1. Checkout to main and pull latest version.
+2. Perform flutter pub get to update pubspec.lock
+3. Update version in pubspec.yaml depending on parameter (first number if type=major, second if type=minor and third if type=patch)
+4. Analize changes that occured after previous commit that updated version (Usually version commit name's have format `Version x.y.z` so you can use them as flag)
+5. Update README.md with the new component documentation
+6. Update CHANGELOG.md with the additions
+7. Run flutter analize to check if package is available for update
+8. Write about problems or places that require attention that happened at the time of update3
 
 **TODO**: Add more custom workflows as needed
 
