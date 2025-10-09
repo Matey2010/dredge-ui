@@ -21,3 +21,4 @@ export 'src/widgets/notification_widget.dart';
 export 'src/widgets/toast_layout.dart';
 export 'src/widgets/button.dart';
 export 'src/widgets/dr_confirmation_modal.dart';
+export 'src/widgets/dr_loader.dart';
