@@ -42,7 +42,7 @@ Increment version
 
 ##### Steps
 
-1. Checkout to main and pull latest version.
+1. Checkout to main and pull --rebase latest version.
 2. Perform flutter pub get to update pubspec.lock
 3. Update version in pubspec.yaml depending on parameter (first number if type=major, second if type=minor and third if type=patch)
 4. Analize changes that occured after previous commit that updated version (Usually version commit name's have format `Version x.y.z` so you can use them as flag)
