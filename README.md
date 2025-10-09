@@ -16,7 +16,7 @@ Add this package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  dredge_ui: ^0.1.0
+  dredge_ui: ^0.2.0
 ```
 
 Or for local development:
@@ -197,6 +197,41 @@ TabNavigation(
 )
 ```
 
+#### Loader
+
+```dart
+import 'package:dredge_ui/widgets.dart';
+
+// Basic Loader
+DrLoader()
+
+// Loader with custom size and color
+DrLoader(
+  indicatorSize: 50,
+  color: Colors.blue,
+  strokeWidth: 6,
+)
+
+// Loader with child text
+DrLoader(
+  indicatorSize: 40,
+  child: Text('Loading...', style: TextStyle(fontSize: 16)),
+)
+
+// Loader in a container with background
+DrLoader(
+  width: 200,
+  height: 200,
+  backgroundColor: Colors.white,
+  borderRadius: BorderRadius.circular(12),
+  padding: EdgeInsets.all(20),
+  indicatorSize: 50,
+  color: Colors.blue,
+)
+```
+
+The `DrLoader` widget provides a customizable circular progress indicator with optional background container, child widget, and extensive styling options.
+
 #### WebView
 
 ```dart
@@ -257,6 +292,7 @@ import 'package:dredge_ui/extensions.dart';  // Dart extensions
 - **DrWebView**, **DrWebViewModal**, **DrFixedHeightWebView** - WebView components
 - **DrDefaultModal** - Default modal with header support
 - **DrModalHeader** - Reusable modal header with close and back buttons
+- **DrLoader** - Customizable circular progress indicator with container support
 - **Tappable** - Touchable wrapper with ripple effect
 
 ### Models

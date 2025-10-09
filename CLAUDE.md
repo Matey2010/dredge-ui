@@ -49,7 +49,9 @@ Increment version
 5. Update README.md with the new component documentation
 6. Update CHANGELOG.md with the additions
 7. Run flutter analize to check if package is available for update
-8. Write about problems or places that require attention that happened at the time of update3
+8. Run `git commit -am "Version x.y.z"` where `x.y and z` are major, minor and patch version respectively
+9. Write about problems or places that require attention that happened at the time of update
+10. Run `dart pub publish` command
 
 **TODO**: Add more custom workflows as needed
 

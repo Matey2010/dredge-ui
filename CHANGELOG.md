@@ -1,3 +1,11 @@
+## 0.2.0
+
+### Added
+- **DrLoader** - Customizable circular progress indicator widget with extensive styling options including container support, custom colors, sizes, and child widget support
+
+### Changed
+- Updated CLAUDE.md with improved custom workflow documentation format
+
 ## 0.1.0
 
 ### Added
