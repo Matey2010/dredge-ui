@@ -1,3 +1,13 @@
+## 0.2.1
+
+### Fixed
+- Fixed `Select` widget height spanning by adding `MainAxisSize.min` to prevent unnecessary vertical expansion
+- Removed unused theme and colorScheme variables in `DrInput`, `DrPhoneInput`, and `DrLoader` widgets
+- Changed default focus border color from theme-based to hardcoded iOS blue (`Color(0xFF007AFF)`) for consistency across themes
+
+### Changed
+- Code formatting improvements across `DrInput`, `DrLoader`, and `DrPhoneInput` widgets
+
 ## 0.2.0
 
 ### Added

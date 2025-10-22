@@ -16,7 +16,7 @@ Add this package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  dredge_ui: ^0.2.0
+  dredge_ui: ^0.2.1
 ```
 
 Or for local development:
