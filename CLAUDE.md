@@ -20,41 +20,6 @@ dart pub publish --dry-run      # Validate package before publishing
 dart pub publish                # Publish to pub.dev
 ```
 
-### Custom Workflows
-
-When working with this project, Claude should handle listed automated workflows.
-Each workflow has Name section (prefixed with `####`), optional Description section (prefixed with `#####`), optional Parameters section (prefixed with `#####`) and Steps section (prefixed with `#####`). If workflow's format is invalid it should'nt be run either and user should be responded with issue with current workflow
-
-- Name is unique workflow identifier and should be descriptive
-- Description is a paragraph gives general understanding of what this workflow does
-- Parameters is a list with workflow parameters. It will have short description after dash. If parameter is not valid by it's description (missing parameter that described as required for example) claude should not run workflow but instead ask user to pass valid params.
-- Steps are ordered actions that should be performed to complete workflow
-
-#### `update-version` - Increment version
-
-##### Description
-
-Increment version
-
-##### Parameters
-
-- `type` - one of major|minor|patch
-
-##### Steps
-
-1. Checkout to main and pull --rebase latest version.
-2. Perform flutter pub get to update pubspec.lock
-3. Update version in pubspec.yaml depending on parameter (first number if type=major, second if type=minor and third if type=patch)
-4. Analize changes that occured after previous commit that updated version (Usually version commit name's have format `Version x.y.z` so you can use them as flag)
-5. Update README.md with the new component documentation
-6. Update CHANGELOG.md with the additions
-7. Run flutter analize to check if package is available for update
-8. Run `git commit -am "Version x.y.z"` where `x.y and z` are major, minor and patch version respectively
-9. Write about problems or places that require attention that happened at the time of update
-10. Run `dart pub publish` command
-
-**TODO**: Add more custom workflows as needed
-
 ## Architecture
 
 ### Module Organization

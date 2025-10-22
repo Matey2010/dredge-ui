@@ -117,9 +117,6 @@ class _DrInputState extends State<DrInput> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
     return Stack(
       children: [
         Container(
@@ -132,7 +129,8 @@ class _DrInputState extends State<DrInput> with SingleTickerProviderStateMixin {
                     color:
                         widget.borderColor ??
                         (_isFocused
-                            ? (widget.focusedBorderColor ?? colorScheme.primary)
+                            ? (widget.focusedBorderColor ??
+                                  const Color(0xFF007AFF))
                             : Colors.grey.shade400),
                     width: _isFocused ? 2 : 1,
                   ),
@@ -160,7 +158,10 @@ class _DrInputState extends State<DrInput> with SingleTickerProviderStateMixin {
                         border: widget.decoration?.border ?? InputBorder.none,
                         contentPadding:
                             widget.decoration?.contentPadding ??
-                            const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+                            const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 16,
+                            ),
                       ) ??
                       const InputDecoration(
                         border: InputBorder.none,
@@ -174,11 +175,7 @@ class _DrInputState extends State<DrInput> with SingleTickerProviderStateMixin {
               if (!widget.enabled)
                 Padding(
                   padding: const EdgeInsets.only(right: 12),
-                  child: Icon(
-                    Icons.lock,
-                    size: 20,
-                    color: Colors.grey,
-                  ),
+                  child: Icon(Icons.lock, size: 20, color: Colors.grey),
                 ),
             ],
           ),

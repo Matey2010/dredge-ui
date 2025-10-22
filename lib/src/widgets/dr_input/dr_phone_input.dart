@@ -195,8 +195,6 @@ class _DrPhoneInputState extends State<DrPhoneInput> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final dialogProvider = context.watch<DialogProvider>();
 
     return Stack(
@@ -211,7 +209,7 @@ class _DrPhoneInputState extends State<DrPhoneInput> {
                     color:
                         widget.borderColor ??
                         (_focusNode.hasFocus
-                            ? (widget.focusedBorderColor ?? colorScheme.primary)
+                            ? (widget.focusedBorderColor ?? const Color(0xFF007AFF))
                             : Colors.grey.shade400),
                     width: _focusNode.hasFocus ? 2 : 1,
                   ),

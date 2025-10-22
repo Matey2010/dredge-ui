@@ -181,6 +181,7 @@ class _SelectState extends State<Select> {
     })();
 
     return Column(
+      mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (formattedLabel != null) ...[

@@ -42,15 +42,13 @@ class DrLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
     Widget indicator = CircularProgressIndicator(
       strokeWidth: strokeWidth ?? 4.0,
-      valueColor: valueColor ??
+      valueColor:
+          valueColor ??
           (color != null
               ? AlwaysStoppedAnimation<Color>(color!)
-              : AlwaysStoppedAnimation<Color>(colorScheme.primary)),
+              : const AlwaysStoppedAnimation<Color>(Color(0xFF007AFF))),
       value: value,
       semanticsLabel: semanticsLabel,
       semanticsValue: semanticsValue,
@@ -72,11 +70,7 @@ class DrLoader extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                indicator,
-                const SizedBox(height: 12),
-                child!,
-              ],
+              children: [indicator, const SizedBox(height: 12), child!],
             )
           : indicator,
     );
@@ -89,7 +83,8 @@ class DrLoader extends StatelessWidget {
       width: width,
       height: height,
       margin: margin,
-      decoration: decoration ??
+      decoration:
+          decoration ??
           (backgroundColor != null || borderRadius != null
               ? BoxDecoration(
                   color: backgroundColor,
